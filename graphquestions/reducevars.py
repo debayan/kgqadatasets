@@ -9,12 +9,10 @@ for item in d:
     newitem = copy.deepcopy(item)
     sparql = item['sparql_query']
     sparql_split = sparql.replace('(',' ( ').replace(')',' ) ').replace('{',' { ').replace('}',' } ').replace('\n',' ').split()
-    print(sparql)
     variables = set([x for x in sparql_split if x[0] == '?'])
-    print(variables)
     for idx,var in enumerate(variables):
         sparql = sparql.replace(var,newvars[idx])
-    print(sparql)
+    sparql = sparql.replace('PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX : <http://rdf.freebase.com/ns/> ','').replace('\n',' ').replace('(',' ( ').replace(')',' ) ').replace('{',' { ').replace('}',' } ')
     newitem['sparql_query_reduced_vars'] = sparql
     newarr.append(newitem)
 
