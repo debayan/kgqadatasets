@@ -159,6 +159,6 @@ if __name__ == '__main__':
         sparql = item['sparql_query_reduced_vars']
         if question and sparql:
             candtokens,candvecs,ents,rels = vectorise(question,sparql)
-            f.write(json.dumps([uid,question,candtokens,candvecs,ents,rels,sparql])+'\n')
+            f.write(json.dumps([uid,question,candtokens,candvecs,ents,rels,[],[],sparql])+'\n')
         print("embfound : %d  embnotfound: %d  labfound: %d labnotfound: %d"%(embf, embnf,labf,labnf))
     f.close()
