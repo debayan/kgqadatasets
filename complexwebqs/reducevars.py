@@ -12,9 +12,10 @@ for item in d:
     sparql = item['sparql']
     sparql_split = sparql.replace('(',' ( ').replace(')',' ) ').replace('{',' { ').replace('}',' } ').replace('\n',' ').split()
     #print(sparql)
-    variables = set([x for x in sparql_split if x[0] == '?'])
-    #print(variables)
-    for idx,var in enumerate(variables):
+    oldvars = [x for x in sparql_split if x[0] == '?']
+    oldvarset = list(dict.fromkeys(oldvars).keys())
+    print(oldvarset)
+    for idx,var in enumerate(oldvarset):
         sparql = sparql.replace(var,newvars[idx])
     #print(sparql)
     sparql = sparql.replace('PREFIX ns: <http://rdf.freebase.com/ns/>','').replace('\n',' ').replace('(',' ( ').replace(')',' ) ').replace('{',' { ').replace('}',' } ')
