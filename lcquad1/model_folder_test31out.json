@@ -16,7 +16,7 @@
         "uid": 1701
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Muslim_Brotherhood",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -96,7 +96,7 @@
         "uid": 2549
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Neil_Brown_(Australian_politician)",
             "http://dbpedia.org/resource/Andrew_Peacock",
@@ -112,7 +112,7 @@
         "uid": 193
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Focke-Wulf_Fw_260",
             "http://dbpedia.org/resource/Start_+_Flug_H-101",
@@ -208,7 +208,7 @@
         "uid": 4702
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Comcast",
             "",
@@ -288,7 +288,7 @@
         "uid": 4938
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Raptors_905",
             "",
@@ -400,7 +400,7 @@
         "uid": 722
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Indiana",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -464,7 +464,7 @@
         "uid": 2262
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Emel_(magazine)",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -496,7 +496,7 @@
         "uid": 3212
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Fig_Tree_Bay",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -592,7 +592,7 @@
         "uid": 1724
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Jawaharlal_Nehru",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -688,7 +688,7 @@
         "uid": 688
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Vostok_programme",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -736,7 +736,7 @@
         "uid": 848
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Dragimir_of_Travunia_and_Zachlumia",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -992,7 +992,7 @@
         "uid": 1203
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Taiwan",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -1024,7 +1024,7 @@
         "uid": 24
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Stanford_Cardinal",
             "http://dbpedia.org/resource/Gerald_Reaven",
@@ -1152,7 +1152,7 @@
         "uid": 2687
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/A._Peter_Dewey",
             "",
@@ -1184,7 +1184,7 @@
         "uid": 2394
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
         "goldents": [
             "http://dbpedia.org/resource/John_Fanning_(businessman)",
             "",
@@ -1200,7 +1200,7 @@
         "uid": 4567
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/Muhammad_Yunus",
             "",
@@ -1296,7 +1296,7 @@
         "uid": 4370
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Pullaiahgaripalli",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -1360,7 +1360,7 @@
         "uid": 4665
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Giuseppe_Bertello",
             "http://dbpedia.org/resource/Pietro_Parolin",
@@ -1392,7 +1392,7 @@
         "uid": 936
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Sanggar_Agung",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -1440,7 +1440,7 @@
         "uid": 2360
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Steve_Holland_(footballer)",
             "",
@@ -1504,7 +1504,7 @@
         "uid": 1332
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Boonchu_Rojanastien",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -1664,7 +1664,7 @@
         "uid": 1645
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Louis_D._Astorino",
             "",
@@ -1696,7 +1696,7 @@
         "uid": 3476
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Blodpalt",
             "http://dbpedia.org/resource/Kaszanka",
@@ -1824,7 +1824,7 @@
         "uid": 603
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Gerard_Marino",
             "",
@@ -1872,7 +1872,7 @@
         "uid": 126
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Stevens_Thomson_Mason_(Virginia)",
             "",
@@ -1952,7 +1952,7 @@
         "uid": 827
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Jared_Kushner",
             "",
@@ -1984,7 +1984,7 @@
         "uid": 984
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Blade_Runner_2:_The_Edge_of_Human",
             "",
@@ -2032,7 +2032,7 @@
         "uid": 2188
     },
     {
-        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
         "goldents": [
             "http://dbpedia.org/resource/Daniel_Gibson",
             "",
@@ -2144,7 +2144,7 @@
         "uid": 3205
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Guggenheim_family",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -2208,7 +2208,7 @@
         "uid": 4106
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/1967_Mexican_Grand_Prix",
             "http://dbpedia.org/resource/Dagenham_wind_turbines",
@@ -2384,7 +2384,7 @@
         "uid": 4432
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Lee_Robinson_(American_football)",
             "",
@@ -2400,7 +2400,7 @@
         "uid": 3228
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Bloomberg_Radio",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -2448,7 +2448,7 @@
         "uid": 1865
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Miluk_language",
             "http://dbpedia.org/resource/Cayuse_language",
@@ -2512,7 +2512,7 @@
         "uid": 2336
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Oldsmobile_88",
             "",
@@ -2576,7 +2576,7 @@
         "uid": 2597
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/State_of_Mexico",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -2720,7 +2720,7 @@
         "uid": 4818
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Viveka_Babajee",
             "http://dbpedia.org/resource/Ronny_Vencatachellum",
@@ -2768,7 +2768,7 @@
         "uid": 4018
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Krapanski_Potok",
             "",
@@ -2784,7 +2784,7 @@
         "uid": 2151
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Paul_Hausser",
             "",
@@ -2864,7 +2864,7 @@
         "uid": 1248
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Arun_Chandra_Guha",
             "http://dbpedia.org/resource/Indira_Gandhi",
@@ -2928,7 +2928,7 @@
         "uid": 2190
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/Don_R._Berlin",
             "",
@@ -2992,7 +2992,7 @@
         "uid": 1863
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Seed_Eight",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -3024,7 +3024,7 @@
         "uid": 2449
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Crook_County,_Oregon",
             "",
@@ -3120,7 +3120,7 @@
         "uid": 2898
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Luzhniki_Stadium",
             "",
@@ -3200,7 +3200,7 @@
         "uid": 4787
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Steve_Burke_(businessman)",
             "",
@@ -3264,7 +3264,7 @@
         "uid": 4896
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Swahili_language",
             "",
@@ -3328,7 +3328,7 @@
         "uid": 1908
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Cologny",
             "http://dbpedia.org/resource/Lancy",
@@ -3344,7 +3344,7 @@
         "uid": 4332
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/S\u00e3o_Paulo_Museum_of_Art",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -3392,7 +3392,7 @@
         "uid": 1604
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Azerbaijan",
             "",
@@ -3536,7 +3536,7 @@
         "uid": 2376
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Henry_Morton_Dexter",
             "http://dbpedia.org/resource/Jack_McGregor",
@@ -3552,7 +3552,7 @@
         "uid": 1342
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Dallas",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -3712,7 +3712,7 @@
         "uid": 901
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Carl_Stokes",
             "http://dbpedia.org/resource/Wyche_Fowler",
@@ -3904,7 +3904,7 @@
         "uid": 2762
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Stephen_Urban",
             "http://dbpedia.org/resource/Ali_Habib_Mahmud",
@@ -4000,7 +4000,7 @@
         "uid": 3
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Randy_Jackson",
             "http://dbpedia.org/resource/Jennifer_Lopez",
@@ -4016,7 +4016,7 @@
         "uid": 4170
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/1951_Asian_Games",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -4112,7 +4112,7 @@
         "uid": 2590
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Costa_Rica_national_football_team",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -4128,7 +4128,7 @@
         "uid": 242
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Auckland_rugby_union_team",
             "",
@@ -4224,7 +4224,7 @@
         "uid": 3421
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Chung_Won-shik",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -4272,7 +4272,7 @@
         "uid": 4828
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Mediterranean_Sea",
             "",
@@ -4464,7 +4464,7 @@
         "uid": 2739
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Middlesbrough_F.C.",
             "",
@@ -4624,7 +4624,7 @@
         "uid": 66
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Los_Angeles_World_Airports",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -4688,7 +4688,7 @@
         "uid": 125
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Bellaire,_Ohio",
             "",
@@ -4784,7 +4784,7 @@
         "uid": 3086
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Dion_Beebe",
             "http://dbpedia.org/resource/Charles_LeMaire",
@@ -4848,7 +4848,7 @@
         "uid": 2797
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Tampa,_Florida",
             "",
@@ -4976,7 +4976,7 @@
         "uid": 55
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/Not_on_Our_Watch_(organization)",
             "",
@@ -5104,7 +5104,7 @@
         "uid": 2878
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/The_Weathered_Underground",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -5184,7 +5184,7 @@
         "uid": 1753
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Miami",
             "",
@@ -5216,7 +5216,7 @@
         "uid": 4351
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Money_(Pink_Floyd_song)",
             "",
@@ -5280,7 +5280,7 @@
         "uid": 3900
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/European_Go_Federation",
             "",
@@ -5312,7 +5312,7 @@
         "uid": 4156
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Daniel_L._D._Granger",
             "http://dbpedia.org/resource/Job_Durfee",
@@ -5360,7 +5360,7 @@
         "uid": 4188
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Marika_Gombitov\u00e1",
             "",
@@ -5376,7 +5376,7 @@
         "uid": 666
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/EMI",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -5696,7 +5696,7 @@
         "uid": 2832
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Ludwig_Drums",
             "http://dbpedia.org/resource/Remo",
@@ -5712,7 +5712,7 @@
         "uid": 3472
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/English_language",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -5744,7 +5744,7 @@
         "uid": 2180
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/Where_Everybody_Knows_Your_Name",
             "",
@@ -5760,7 +5760,7 @@
         "uid": 2128
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Shallot",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -5792,7 +5792,7 @@
         "uid": 4367
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Galician_Wikipedia",
             "http://dbpedia.org/resource/German_Wikipedia",
@@ -5824,7 +5824,7 @@
         "uid": 4344
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/Alexander_Magleby",
             "",
@@ -5856,7 +5856,7 @@
         "uid": 2017
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Craig_Van_Tilbury",
             "http://dbpedia.org/resource/Islamic_Azad_University_Central_Tehran_Branch",
@@ -6032,7 +6032,7 @@
         "uid": 1848
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/General_Educational_Development",
             "",
@@ -6080,7 +6080,7 @@
         "uid": 235
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Chris_DuBois",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -6112,7 +6112,7 @@
         "uid": 1984
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Coconut",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -6128,7 +6128,7 @@
         "uid": 4363
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Patr\u00edcia_Amorim",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -6192,7 +6192,7 @@
         "uid": 673
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Commodore_CDTV",
             "",
@@ -6240,7 +6240,7 @@
         "uid": 3419
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Ronda",
             "",
@@ -6320,7 +6320,7 @@
         "uid": 2048
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Divertis",
             "",
@@ -6384,7 +6384,7 @@
         "uid": 1460
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Berlin",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -6512,7 +6512,7 @@
         "uid": 1633
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Ferran_Soriano",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -6528,7 +6528,7 @@
         "uid": 4586
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Mangalore",
             "",
@@ -6560,7 +6560,7 @@
         "uid": 4158
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Cy-Fair_High_School",
             "",
@@ -6640,7 +6640,7 @@
         "uid": 4600
     },
     {
-        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
         "goldents": [
             "http://dbpedia.org/resource/Chester_Bennington",
             "",
@@ -6736,7 +6736,7 @@
         "uid": 255
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Grameen_Bank",
             "",
@@ -6768,7 +6768,7 @@
         "uid": 1581
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/The_Second_Coming_(TV_serial)",
             "",
@@ -6784,7 +6784,7 @@
         "uid": 2956
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
         "goldents": [
             "http://dbpedia.org/resource/Gibson_Guitar_Corporation",
             "",
@@ -6848,7 +6848,7 @@
         "uid": 3775
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Michael_Springer",
             "http://dbpedia.org/resource/Donald_Brooks",
@@ -6864,7 +6864,7 @@
         "uid": 4136
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Georgina_Theodora_Wood",
             "http://dbpedia.org/resource/Akwasi_Oppong_Fosu",
@@ -6912,7 +6912,7 @@
         "uid": 2745
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Erik_Jendresen",
             "http://dbpedia.org/resource/John_Orloff",
@@ -6960,7 +6960,7 @@
         "uid": 1145
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/9TV",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -6976,7 +6976,7 @@
         "uid": 667
     },
     {
-        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
         "goldents": [
             "http://dbpedia.org/resource/Gerard_Piqu\u00e9",
             "",
@@ -7024,7 +7024,7 @@
         "uid": 2831
     },
     {
-        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/List_of_The_Wolves_of_Mercy_Falls_characters",
             "",
@@ -7072,7 +7072,7 @@
         "uid": 470
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Fiq,_Ethiopia",
             "http://dbpedia.org/resource/Adugna_Deyas",
@@ -7232,7 +7232,7 @@
         "uid": 1250
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Hellenic_Naval_Academy",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -7472,7 +7472,7 @@
         "uid": 504
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Sony_Corporation_shareholders_and_subsidiaries",
             "",
@@ -7488,7 +7488,7 @@
         "uid": 4285
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/2014_FIFA_U-17_Women's_World_Cup",
             "",
@@ -7712,7 +7712,7 @@
         "uid": 713
     },
     {
-        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
         "goldents": [
             "http://dbpedia.org/resource/Cornell_University_Press",
             "",
@@ -7824,7 +7824,7 @@
         "uid": 1827
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . ?vr1 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Letitia_MacTavish_Hargrave",
             "http://dbpedia.org/resource/Martino_Martini",
@@ -7840,7 +7840,7 @@
         "uid": 1155
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Unix-like",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -7920,7 +7920,7 @@
         "uid": 499
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/John_McEwen",
             "http://dbpedia.org/resource/Park_Chung-hee",
@@ -7936,7 +7936,7 @@
         "uid": 4536
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Bombshell_(Smash)",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -8032,7 +8032,7 @@
         "uid": 1540
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Duck_family_(Disney)",
             "http://dbpedia.org/resource/Clan_McDuck",
@@ -8176,7 +8176,7 @@
         "uid": 953
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Berkeley,_California",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -8224,7 +8224,7 @@
         "uid": 1156
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Jenny_Macklin",
             "",
@@ -8240,7 +8240,7 @@
         "uid": 3294
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Jefferson_North_Assembly",
             "",
@@ -8272,7 +8272,7 @@
         "uid": 2156
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/United_States_Congress",
             "http://dbpedia.org/resource/Kansas_Legislature",
@@ -8448,7 +8448,7 @@
         "uid": 2782
     },
     {
-        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Fighting_Tiger",
             "",
@@ -8496,7 +8496,7 @@
         "uid": 2502
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Raymond_Conner",
             "http://dbpedia.org/resource/Boeing_CH-47_Chinook",
@@ -8512,7 +8512,7 @@
         "uid": 4360
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Suicide",
             "",
@@ -8528,7 +8528,7 @@
         "uid": 4171
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <entpos@@2> <predpos@@2> }",
+        "answer": "select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <entpos@@2> <predpos@@2> }",
         "goldents": [
             "http://dbpedia.org/resource/Arizona_State_Sun_Devils",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -8544,7 +8544,7 @@
         "uid": 395
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <entpos@@2> <predpos@@2> }",
+        "answer": "select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <entpos@@2> <predpos@@2> }",
         "goldents": [
             "http://dbpedia.org/resource/Batman_Live",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -8560,7 +8560,7 @@
         "uid": 4836
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Microsoft_Azure",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -8576,7 +8576,7 @@
         "uid": 4492
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Camp_Nou",
             "",
@@ -8768,7 +8768,7 @@
         "uid": 2143
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Jonathan_Haskell",
             "",
@@ -8848,7 +8848,7 @@
         "uid": 2967
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/OSS_117:_Lost_in_Rio",
             "",
@@ -8944,7 +8944,7 @@
         "uid": 728
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <entpos@@2> <predpos@@2> }",
         "goldents": [
             "http://dbpedia.org/resource/1211_Avenue_of_the_Americas",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -9040,7 +9040,7 @@
         "uid": 3974
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
         "goldents": [
             "http://dbpedia.org/resource/Jim_Harris_(entrepreneur)",
             "",
@@ -9056,7 +9056,7 @@
         "uid": 616
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/McDonnell_Aircraft",
             "",
@@ -9136,7 +9136,7 @@
         "uid": 4950
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Robert_Bernstein_(comics)",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -9184,7 +9184,7 @@
         "uid": 4671
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Toms_Creek_(Monocacy_River)",
             "",
@@ -9216,7 +9216,7 @@
         "uid": 753
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/National_Medal_of_Science",
             "",
@@ -9312,7 +9312,7 @@
         "uid": 4380
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Switzerland_at_the_2004_Summer_Olympics",
             "http://dbpedia.org/resource/Switzerland_at_the_2008_Summer_Olympics",
@@ -9344,7 +9344,7 @@
         "uid": 3913
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Angelina_Jolie",
             "",
@@ -9424,7 +9424,7 @@
         "uid": 2427
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
         "goldents": [
             "http://dbpedia.org/resource/Josef_B\u00fchler",
             "",
@@ -9440,7 +9440,7 @@
         "uid": 3746
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Zuo_Zongtang",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -9504,7 +9504,7 @@
         "uid": 3546
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Zambezi_River_Authority",
             "",
@@ -9552,7 +9552,7 @@
         "uid": 335
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Arthur_St._Clair",
             "",
@@ -9616,7 +9616,7 @@
         "uid": 1015
     },
     {
-        "answer": "ask where { <entpos@@1> <predpos@@1> <entpos@@2> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Francisco_Pizarro",
             "http://dbpedia.org/resource/Charles_V,_Holy_Roman_Emperor",
@@ -9744,7 +9744,7 @@
         "uid": 4452
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Warner_Bros._Animation",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -9792,7 +9792,7 @@
         "uid": 2479
     },
     {
-        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
         "goldents": [
             "http://dbpedia.org/resource/Momoko_K\u014dchi",
             "",
@@ -9808,7 +9808,7 @@
         "uid": 2265
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Benelux",
             "http://dbpedia.org/resource/Kerguelen_Islands",
@@ -9824,7 +9824,7 @@
         "uid": 2959
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Diprotodontia",
             "http://dbpedia.org/resource/Chordate",
@@ -9840,7 +9840,7 @@
         "uid": 4731
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Clinton_Foundation",
             "",
@@ -9888,7 +9888,7 @@
         "uid": 3118
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Trinity_School,_Brentwood",
             "http://dbpedia.org/resource/Buckhurst_Hill_County_High_School",
@@ -9920,7 +9920,7 @@
         "uid": 4045
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Jo_Garcia",
             "http://dbpedia.org/resource/Merritt_Cabal",
@@ -10176,7 +10176,7 @@
         "uid": 512
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Merritt_Paulson",
             "",
@@ -10288,7 +10288,7 @@
         "uid": 116
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/QDT",
             "",
@@ -10352,7 +10352,7 @@
         "uid": 830
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Timmy_Time",
             "",
@@ -10384,7 +10384,7 @@
         "uid": 4853
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Ulrich_II,_Count_of_East_Frisia",
             "",
@@ -10416,7 +10416,7 @@
         "uid": 635
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Cobham_Training_Centre",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -10432,7 +10432,7 @@
         "uid": 4465
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Balanidae",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -10560,7 +10560,7 @@
         "uid": 2660
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/United_States_dollar",
             "",
@@ -10592,7 +10592,7 @@
         "uid": 3854
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . }",
         "goldents": [
             "http://dbpedia.org/resource/Carolina_Panthers",
             "http://dbpedia.org/resource/Indianapolis_Colts",
@@ -10608,7 +10608,7 @@
         "uid": 1715
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Chordate",
             "http://dbpedia.org/resource/Diprotodontia",
@@ -10640,7 +10640,7 @@
         "uid": 3261
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Aegean_Sea",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -10752,7 +10752,7 @@
         "uid": 2774
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/SFOR",
             "",
@@ -10896,7 +10896,7 @@
         "uid": 2950
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Willie_Nelson_and_Family",
             "",
@@ -10944,7 +10944,7 @@
         "uid": 1841
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Prime_Minister's_House_(Colombo)",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -11072,7 +11072,7 @@
         "uid": 2537
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/Raymond_Johansen",
             "",
@@ -11088,7 +11088,7 @@
         "uid": 154
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Gloria_Schaffer",
             "http://dbpedia.org/resource/Newington,_Connecticut",
@@ -11104,7 +11104,7 @@
         "uid": 3009
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Defenceman",
             "",
@@ -11280,7 +11280,7 @@
         "uid": 3394
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/American_Football_League",
             "",
@@ -11296,7 +11296,7 @@
         "uid": 3327
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . }",
         "goldents": [
             "http://dbpedia.org/resource/French_Southern_and_Antarctic_Lands",
             "http://dbpedia.org/resource/Kerguelen_Islands",
@@ -11536,7 +11536,7 @@
         "uid": 2565
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Choctaw",
             "",
@@ -11552,7 +11552,7 @@
         "uid": 4994
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/National_Medal_of_Science",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -11568,7 +11568,7 @@
         "uid": 1069
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Moses",
             "",
@@ -11744,7 +11744,7 @@
         "uid": 225
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Stevens_T._Mason",
             "",
@@ -11760,7 +11760,7 @@
         "uid": 3354
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/VMF-218",
             "http://dbpedia.org/resource/VMF-155",
@@ -11792,7 +11792,7 @@
         "uid": 562
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Boeing_F/A-18E/F_Super_Hornet",
             "http://dbpedia.org/resource/Boeing_CH-47_Chinook",
@@ -11984,7 +11984,7 @@
         "uid": 1218
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/City_of_Angels",
             "",
@@ -12000,7 +12000,7 @@
         "uid": 1527
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/New_York",
             "",
@@ -12048,7 +12048,7 @@
         "uid": 4891
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/To_Know_Him_Is_to_Love_Him",
             "",
@@ -12208,7 +12208,7 @@
         "uid": 2200
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Send_It_On_(Disney's_Friends_for_Change_song)",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -12272,7 +12272,7 @@
         "uid": 253
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Arthur_St._Clair",
             "",
@@ -12352,7 +12352,7 @@
         "uid": 4682
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Republican_River",
             "",
@@ -12512,7 +12512,7 @@
         "uid": 2056
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Remote_Desktop_Protocol",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -12560,7 +12560,7 @@
         "uid": 4548
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Oslo",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -12592,7 +12592,7 @@
         "uid": 2049
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Kampuchean_United_Front_for_National_Salvation",
             "",
@@ -12736,7 +12736,7 @@
         "uid": 4992
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Latvian_Wikipedia",
             "http://dbpedia.org/resource/Wiktionary",
@@ -12784,7 +12784,7 @@
         "uid": 2976
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Stanford_Cardinal",
             "http://dbpedia.org/resource/Jim_Wylie",
@@ -12880,7 +12880,7 @@
         "uid": 146
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Piotr_Gli\u0144ski",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -12976,7 +12976,7 @@
         "uid": 2511
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Spaghetti_squash",
             "http://dbpedia.org/resource/Bannock_(food)",
@@ -12992,7 +12992,7 @@
         "uid": 3397
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Pierre_R._Graham",
             "http://dbpedia.org/resource/Edwin_F._Hunter",
@@ -13008,7 +13008,7 @@
         "uid": 4282
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Indian_English",
             "",
@@ -13136,7 +13136,7 @@
         "uid": 2327
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Sverre_Krogh_Sundb\u00f8",
             "http://dbpedia.org/resource/H\u00e5vard_Vad_Petersson",
@@ -13168,7 +13168,7 @@
         "uid": 766
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Muslim_Brotherhood",
             "",
@@ -13200,7 +13200,7 @@
         "uid": 4218
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Claris",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -13216,7 +13216,7 @@
         "uid": 3255
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Cowombat_Flat",
             "http://dbpedia.org/resource/Murray_Mouth",
@@ -13440,7 +13440,7 @@
         "uid": 3696
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/BBC_One",
             "http://dbpedia.org/resource/BBC_HD",
@@ -13648,7 +13648,7 @@
         "uid": 663
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Western_pygmy_blue",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -13712,7 +13712,7 @@
         "uid": 4744
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Penny_Lancaster",
             "http://dbpedia.org/resource/Alana_Stewart",
@@ -13888,7 +13888,7 @@
         "uid": 4934
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Charlie_Justice_(American_football_player)",
             "http://dbpedia.org/resource/Bobby_Hoppe",
@@ -13936,7 +13936,7 @@
         "uid": 2693
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
         "goldents": [
             "http://dbpedia.org/resource/Trinity_House",
             "",
@@ -14064,7 +14064,7 @@
         "uid": 1059
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Lake_Victoria",
             "",
@@ -14112,7 +14112,7 @@
         "uid": 1678
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/Nihoa",
             "",
@@ -14160,7 +14160,7 @@
         "uid": 563
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Golden_Globe_Award",
             "",
@@ -14288,7 +14288,7 @@
         "uid": 502
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Pope_Pius_X",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -14496,7 +14496,7 @@
         "uid": 200
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Wilfred_McDonald",
             "http://dbpedia.org/resource/Cam_Plante",
@@ -14528,7 +14528,7 @@
         "uid": 2278
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Randy_Jackson",
             "http://dbpedia.org/resource/Fox_Broadcasting_Company",
@@ -14544,7 +14544,7 @@
         "uid": 3561
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> }",
         "goldents": [
             "http://dbpedia.org/resource/C++",
             "http://dbpedia.org/resource/Microsoft_Windows",
@@ -14608,7 +14608,7 @@
         "uid": 1495
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/Gimhae_International_Airport",
             "",
@@ -14624,7 +14624,7 @@
         "uid": 2695
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/GetTV",
             "",
@@ -14656,7 +14656,7 @@
         "uid": 2568
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Dave_Bing",
             "http://dbpedia.org/resource/Ron_Reed",
@@ -14720,7 +14720,7 @@
         "uid": 492
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <entpos@@2> <predpos@@2> }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
         "goldents": [
             "http://dbpedia.org/resource/Anne_Spielberg",
             "",
@@ -14864,7 +14864,7 @@
         "uid": 1275
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/GNU_General_Public_License",
             "",
@@ -14912,7 +14912,7 @@
         "uid": 3342
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/Giorgos_Kaminis",
             "",
@@ -14944,7 +14944,7 @@
         "uid": 995
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
         "goldents": [
             "http://dbpedia.org/resource/Frank_Miller_(comics)",
             "",
@@ -15024,7 +15024,7 @@
         "uid": 1500
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Leonard_Lerman",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -15120,7 +15120,7 @@
         "uid": 3943
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Jamestown,_Virginia",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -15136,7 +15136,7 @@
         "uid": 1585
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
         "goldents": [
             "http://dbpedia.org/resource/House_of_Representatives_of_the_Philippines",
             "",
@@ -15184,7 +15184,7 @@
         "uid": 34
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Duwamish_River",
             "",
@@ -15264,7 +15264,7 @@
         "uid": 1363
     },
     {
-        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
+        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }",
         "goldents": [
             "http://dbpedia.org/resource/World_War_I",
             "",
@@ -15280,7 +15280,7 @@
         "uid": 2612
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/John_Drayton",
             "http://dbpedia.org/resource/William_Clark",
@@ -15360,7 +15360,7 @@
         "uid": 2363
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }",
         "goldents": [
             "http://dbpedia.org/resource/Blade_Runner_2:_The_Edge_of_Human",
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
@@ -15536,7 +15536,7 @@
         "uid": 4658
     },
     {
-        "answer": "select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Blanche_Bruce",
             "http://dbpedia.org/resource/John_Franklin_Miller_(senator)",
@@ -15728,7 +15728,7 @@
         "uid": 4843
     },
     {
-        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@2> ?vr1 }",
+        "answer": "select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr0 <entpos@@2> <predpos@@1> ?vr1 . }",
         "goldents": [
             "http://dbpedia.org/resource/Trishna_(yacht)",
             "http://dbpedia.org/resource/INS_Viraat_(R22)",
@@ -15744,7 +15744,7 @@
         "uid": 4117
     },
     {
-        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "ask where { <entpos@@1> <predpos@@1> <entpos@@2> }",
         "goldents": [
             "http://dbpedia.org/resource/United_States_Navy",
             "http://dbpedia.org/resource/United_States_Department_of_Defense",
@@ -15872,7 +15872,7 @@
         "uid": 130
     },
     {
-        "answer": "select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . }",
+        "answer": "select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }",
         "goldents": [
             "http://dbpedia.org/resource/LoDaisKa_Site",
             "",
@@ -15968,7 +15968,7 @@
         "uid": 3092
     },
     {
-        "answer": "select distinct ?vr1 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }",
+        "answer": "select distinct count ( ?vr1 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> ?vr1 }",
         "goldents": [
             "http://dbpedia.org/resource/Pietermaritzburg",
             "",

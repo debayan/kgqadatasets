@@ -24,7 +24,7 @@ def hitkg(query):
 #    goldd[str(item['_id'])] = result
 #    goldq[str(item['_id'])] = item['sparql_query']
 
-d = json.loads(open(sys.argv[2]).read()) #model output
+d = json.loads(open(sys.argv[1]).read()) #eg: model_folder_test31.1out.json
 
 em = 0
 nem = 0

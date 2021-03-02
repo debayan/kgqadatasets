@@ -171,6 +171,6 @@ if __name__ == '__main__':
         relations = item['relations']
         if question and sparql:
             candtokens,candvecs,ents,rels = vectorise(question,sparql,entities,relations,entd,entvec,reld,relvec)
-            f.write(json.dumps([uid,question,candtokens,str(candvecs),ents,rels,sparql])+'\n')
+            f.write(json.dumps([uid,question,candtokens,str(candvecs),ents,rels,[],[],sparql])+'\n')
         print("embfound : %d  embnotfound: %d  labfound: %d labnotfound: %d"%(embf, embnf,labf,labnf))
     f.close()
