@@ -23,7 +23,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 For which games are Sam Loyd and Eric Schiller both famous?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 987
@@ -37,14 +37,14 @@ valid sparql
 Name the artist who made Dream Dancing and is often associated with Joe Pass?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 193
 Who is the office holder with deputies as Neil Brown and Andrew Peacock?
-match
+nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
-select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
+select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> <entpos@@2> . ?vr1 <entpos@@3> <predpos@@3> }
 valid sparql
 ................
 3057
@@ -91,9 +91,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 3090
 Whose network's parent organisation is Comcast?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 3495
@@ -212,14 +212,14 @@ valid sparql
 Give the name of the  managers of England national under-20 football team and England national under-21 football team?
 nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> <entpos@@2> . }
-valid sparql
+select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> <entpos@@2> }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 1759
 How many cities are around the sea in which the the fig tree bay meets?
-nomatch
+match
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4579
@@ -259,9 +259,9 @@ valid sparql
 ................
 1086
 Who owns the newspaper which was founded by Nehru?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 2523
@@ -350,9 +350,9 @@ valid sparql
 ................
 2203
 Where was the person born who died in Bryn Mawr Hospital?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 2713
@@ -434,9 +434,9 @@ valid sparql
 ................
 1990
 Companies founded in Taiwan have typically which divisions?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 24
@@ -450,7 +450,7 @@ valid sparql
 to which university did both, the Stanford Cardinal and Gerald Reaven go?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 4102
@@ -504,9 +504,9 @@ valid sparql
 ................
 3600
 what awards have been given to A. Peter Dewey?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 2394
@@ -525,10 +525,10 @@ valid sparql
 ................
 4980
 Muhammad Yunus has won how many awards?
-match
+nomatch
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }
-select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
+valid sparql
 ................
 4124
 List the associates of bands which have a label by Motown ?
@@ -567,9 +567,9 @@ valid sparql
 ................
 4569
 What are the houses of the legislature where the leader is called Pullaiahgaripalli ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 536
@@ -595,9 +595,9 @@ valid sparql
 ................
 3874
  Giuseppe Bertello and Pietro Parolin are leaders of which place ?
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> <entpos@@2> . ?vr1 <entpos@@3> <predpos@@3> }
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
 valid sparql
 ................
 936
@@ -609,9 +609,9 @@ valid sparql
 ................
 3737
 How many religions are followed by the group whose architectural style can be seen on Sanggar Agung?
-nomatch
+match
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr0 <entpos@@2> <predpos@@3> }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4728
@@ -632,7 +632,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Who are the shareholder of the soccer club for whom Steve Holland plays?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
 valid sparql
 ................
 201
@@ -744,7 +744,7 @@ valid sparql
 What is a common ingredient used in boyt Blodpalt and Kaszanka ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 1792
@@ -798,9 +798,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 3056
 How many developers were involved in creating games whose score is composed by Gerard Marino?
-nomatch
+match
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4531
@@ -819,10 +819,10 @@ valid sparql
 ................
 3876
 How did the child of Stevens T. Mason die?
-match
+nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-valid sparql
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 2935
 Does the Ontario International Airport serve the Inland Empire?
@@ -875,9 +875,9 @@ valid sparql
 ................
 4971
 In which city did The Ultimate Fighter: Team Rousey vs. Team Tate take place ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 2188
@@ -889,9 +889,9 @@ valid sparql
 ................
 4612
 Who did Daniel Gibson marry?
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }
-select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }
 valid sparql
 ................
 2443
@@ -940,8 +940,8 @@ valid sparql
 Guggenheim family is the cofounder of a company that invested stocks in which baseball teams?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4795
 Was John muir one of the first to ascend a mountain on Mt hoffmann?
@@ -968,7 +968,7 @@ valid sparql
 Name the team which is owned by Dafenham wind turbines and stood first in 1967 mexican Grand Prix ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 1834
@@ -1073,7 +1073,7 @@ valid sparql
 Miluk and Cayuse are still spoken in which part of the world?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 2645
@@ -1220,7 +1220,7 @@ valid sparql
 What are the notable commanders of the army  whose one of the notable commanders is Paul Hausser?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 1997
@@ -1246,9 +1246,9 @@ valid sparql
 ................
 1248
 Name the directors of Lennon Legend: The Very Best of John Lennon (DVD) ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 2192
@@ -1283,8 +1283,8 @@ valid sparql
 In how many places has Don R. Berlin worked?
 nomatch
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }
-select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
+valid sparql
 ................
 3597
 For how many movies are there whose musicians home town is in Volos ?
@@ -1323,10 +1323,10 @@ valid sparql
 ................
 2136
 What is on the border of the places which fall under crook county municipality, oregon?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 1065
 Which is the university of Vanderbilt Commodores ?
@@ -1421,16 +1421,16 @@ valid sparql
 ................
 4896
 Who is the narrator of The Incredible Hulk , 1982 TV series ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 2635
 What sports are played in schools where Swahili is the official language?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 3530
@@ -1463,9 +1463,9 @@ valid sparql
 ................
 4379
 How many artists have their works in the Sao Paolo Museum of Art?
-nomatch
+match
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr0 <entpos@@2> <predpos@@3> }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr0 <entpos@@2> <predpos@@3> }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4027
@@ -1533,9 +1533,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 4355
 Where is the school which is the rival of Somerset Berkley Regional High?
-match
+nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 2376
@@ -1549,7 +1549,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Name the common alma mater of the Henry Morton Dexter and Jack McGregor
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 320
@@ -1626,8 +1626,8 @@ valid sparql
 Who is the president of Carl Stokes nad Wyche Fowler ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> <entpos@@2> . }
-valid sparql
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 2026
 Is God Save the Queen the national anthem of United Kingdom?
@@ -1710,7 +1710,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 What is the common battle fought by Stephen Urban and Ali Habib Mahmud ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 2551
@@ -1799,9 +1799,9 @@ valid sparql
 ................
 242
 Who built the stadium which was rented by Costa Rica national football team?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 1160
@@ -1869,10 +1869,10 @@ valid sparql
 ................
 2324
 What is the total number of other destinations of the airlines whose one of the destinations is Mediterranean Sea?
-nomatch
+match
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 2709
 Count the total number of academic discipline of the journals whose one of the academic discipline is Neuroimaging ?
@@ -1911,10 +1911,10 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 4655
 Give me the total number of television shows whose theme music composer is Julian Gingell and created by  Simon Fuller?
-nomatch
+match
 select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> <entpos@@2> . ?vr1 <entpos@@3> <predpos@@3> }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 2362
 Which cloud platform of Google cloud connect also provides services to 21Vianet ?
@@ -1953,9 +1953,9 @@ valid sparql
 ................
 4844
 Who is the head coach of the teams in Middlesbrough FC?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
 valid sparql
 ................
 2472
@@ -2016,16 +2016,16 @@ valid sparql
 ................
 66
 List some musicians associated with famous guitar players?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 1603
 What are the airlines whose hub airport is operated by the Los Angeles World Airports?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 3283
@@ -2095,7 +2095,7 @@ valid sparql
 What award has been awarded to both Dion Beebe and Charles LeMaire?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 3345
@@ -2177,9 +2177,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 638
 Who founded the Not on our Watch NGO?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 302
@@ -2233,16 +2233,16 @@ valid sparql
 ................
 4202
 Name the children of the person who is the star of The Weathered Underground ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 2286
 Which owner of Chelsea F.C also owns Evraz ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 2261
@@ -2268,17 +2268,17 @@ valid sparql
 ................
 1968
 What is the total number of writers whose singles are recorded in Miami?
-nomatch
+match
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4351
 What religions are followed by members of the societies whose architectural influences can be seen on the Sanggar Agung ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+valid sparql
 ................
 3117
 Who is the producer of album which has the song Money?
@@ -2303,16 +2303,16 @@ valid sparql
 ................
 3900
 Who is the writer of mark twain Tonight ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 3122
 How many members are there in the European Go Federation?
-nomatch
+match
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }
-select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4156
@@ -2347,14 +2347,14 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Marika Gombitov makes songs in which languages?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4338
 What are some musical artists associated with the ones signed up with EMI?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 1887
@@ -2492,16 +2492,16 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 3472
 List few musical artist whose notable instruments are Ludwig Drums and  Remo?
-match
+nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
-select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
+select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> <entpos@@2> . ?vr1 <entpos@@3> <predpos@@3> }
 valid sparql
 ................
 137
 How many rivers start in an English speaking country?
-nomatch
+match
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr0 <entpos@@2> <predpos@@3> }
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 2180
@@ -2513,16 +2513,16 @@ valid sparql
 ................
 2128
 Where Everybody knows you is the theme album of which show ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr1 . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
+valid sparql
 ................
 3177
 Food in which countries has shallot in it?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 4367
@@ -2548,10 +2548,10 @@ valid sparql
 ................
 1331
 Alexander Magleby, a rugby player is alma mater to which university?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
+valid sparql
 ................
 2017
 Is Amharic the official language of Ethiopia?
@@ -2569,10 +2569,10 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 1358
 List the products of the company which published Tweenies: Game Time.
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+valid sparql
 ................
 1329
 List the agencies located someplace lead by Alex Chalk.
@@ -2639,9 +2639,9 @@ valid sparql
 ................
 3037
 Where was the deadbody discovered of one of the alumni of General Educational Development?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 388
@@ -2674,16 +2674,16 @@ valid sparql
 ................
 4363
 In which countries is coconut used as a food ingredient?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 3962
 How many people have worked for teams chaired by Patricia Amorim?
-nomatch
+match
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr0 <entpos@@2> <predpos@@3> }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr0 <entpos@@2> <predpos@@3> }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 770
@@ -2709,9 +2709,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 249
 How many genres of games can I find on the commodore CDTV?
-match
+nomatch
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 1574
@@ -2737,9 +2737,9 @@ valid sparql
 ................
 1823
 List the debut team of the baseball player who born in Houston.
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 716
@@ -2767,7 +2767,7 @@ valid sparql
 What acts and artists are associated with people who have worked with Divertis?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 2724
@@ -2793,9 +2793,9 @@ valid sparql
 ................
 1668
 What are some party leaders of the parties which have had a seat in Berlin?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 2756
@@ -2870,9 +2870,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 223
 Name the largest city in the county where there is a Cy-Fair High School.
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 2193
@@ -2933,9 +2933,9 @@ valid sparql
 ................
 1838
 Which driver had the pole position in 1994 Spanish Grand Prix ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 255
@@ -2947,9 +2947,9 @@ valid sparql
 ................
 4508
 How many awards have been given to the founder of Grameen Bank?
-nomatch
+match
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 1581
@@ -2961,16 +2961,16 @@ valid sparql
 ................
 2956
 Count the number of important works done by the writers of The Second Coming?
-nomatch
+match
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 924
 Who all are known to play the Gibson Guitar Corporation?
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . }
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
 valid sparql
 ................
 4429
@@ -3005,7 +3005,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Name the common nationality of Georgina Theodora Wood and akwasi Oppong Fosu ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 539
@@ -3045,9 +3045,9 @@ valid sparql
 ................
 667
 What is the area of the broadcast network which has the affiliation with 9TV?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 3019
@@ -3075,7 +3075,7 @@ valid sparql
 What are the nicknames given to the characters of The Wolves of the Mercy Falls?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 1353
@@ -3096,7 +3096,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 What is the birthplace of Adugna Deyas and the place where Fiq is located?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 3330
@@ -3164,16 +3164,16 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 4807
 What is the state of origin of the president whose alma mater is Hellenic Naval Academy ?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 4298
 What is the common ethnicity of the Maike Evers and Francisco Lachowski ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 3284
@@ -3185,10 +3185,10 @@ valid sparql
 ................
 2933
 Which senator served in military units VMF-155 and VMF-218?
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . ?vr0 <entpos@@3> <predpos@@3> }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
+valid sparql
 ................
 4175
 What kind of games are made by Interplay Entertainment?
@@ -3220,9 +3220,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 133
 In which time zone is Pong Pha?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 928
@@ -3269,17 +3269,17 @@ valid sparql
 ................
 4285
 What are some products of the the company whose subsidiary is Sony Corp shareholders and subsidies?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 1996
 Who built the stadiums where 2014 FIFA under 17 woman's world cup took place?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-valid sparql
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 3072
 Which area operataed by the South Side Elevated Railroad is also the palce of death of the Sakari Suzuki ?
@@ -3297,9 +3297,9 @@ valid sparql
 ................
 1384
 In which city wasThe Triple Door (The Courage album)  performed live?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 894
@@ -3430,9 +3430,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 1324
 What are some software which are written in languages that are run on Unix like OS?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 4312
@@ -3465,10 +3465,10 @@ valid sparql
 ................
 4536
 Whose commanders are John Mc Ewen and Park Chunghee?
-match
+nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . }
-select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . }
-valid sparql
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 1856
 Who gave guest appearances on the show which is the next episode after the Bombshell one?
@@ -3493,16 +3493,16 @@ valid sparql
 ................
 2386
 Philadelphia City Council is the governing body of which city?
-match
+nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
-select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
+select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
 valid sparql
 ................
 3236
 What are the binomial authority of Menetries's warbler?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 1540
@@ -3558,8 +3558,8 @@ valid sparql
 Where did Georges Wolinski and Judson Huss die/
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> <entpos@@2> . }
-valid sparql
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 2539
 What is the parent company of the airline whose hub is in Detroit?
@@ -3621,7 +3621,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 What are the common houses of US Congress and the Kansas Legislature?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 2616
@@ -3668,9 +3668,9 @@ valid sparql
 ................
 3140
 Who has allegiance is Colony of Virginia and buried in Montpelier?
-match
+nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . }
-select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . }
+select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> <entpos@@2> . }
 valid sparql
 ................
 143
@@ -3726,14 +3726,14 @@ valid sparql
 What is the total number of professions in which someone who has suicided worked?
 nomatch
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
 valid sparql
 ................
 395
 How many golf players are there in Arizona State Sun Devils ?
-match
+nomatch
 select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <entpos@@2> <predpos@@2> }
-select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <entpos@@2> <predpos@@2> }
+select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <entpos@@2> <predpos@@2> }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4836
@@ -3745,16 +3745,16 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 4492
 List the services provided by the company which provides Microsoft azure as one of the service ?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 1365
 What are some team members of the team based in Camp Nou?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 4558
@@ -3913,9 +3913,9 @@ valid sparql
 ................
 412
 List the newspapers whose offices are situated in 1211 Avenue of the Americas?
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <entpos@@2> <predpos@@2> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <entpos@@2> <predpos@@2> }
 valid sparql
 ................
 3146
@@ -3955,9 +3955,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 616
 list some companies founded by Jim Harris.
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . }
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
 valid sparql
 ................
 114
@@ -3971,7 +3971,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 How many developers have games where I can hear Lightning McQueen?
 nomatch
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 3069
@@ -4076,7 +4076,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Which athlete was the flag bearer for Switzerland in 2004 and 2008 summer Olympics ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 3913
@@ -4090,8 +4090,8 @@ valid sparql
 What award was won by the father of Angelina Jolie?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+valid sparql
 ................
 2738
 What are the software whose programming language are Multilingual?
@@ -4125,15 +4125,15 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Josef Bhler belongs to which political party?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> }
+valid sparql
 ................
 4639
 Where did the war take place where one of the commander was Zuo Zongtang?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr0 <entpos@@2> <predpos@@3> }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 1687
 In which place is the company which is known for Barbara bestor located ?
@@ -4181,7 +4181,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Who has fought in wars under commander Arthur St Clair?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
 valid sparql
 ................
 3087
@@ -4207,9 +4207,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 2816
 Was Francisco Pizarro of the monarch of Charles 5, of the roman empire?
-match
+nomatch
 ask where { <entpos@@1> <predpos@@1> <entpos@@2> }
-ask where { <entpos@@1> <predpos@@1> <entpos@@2> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 1631
@@ -4284,30 +4284,30 @@ valid sparql
 ................
 2265
 in which movies have momoki kochi acted
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
-select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
 valid sparql
 ................
 2959
 What is the base currency of the Benelux and is also used as money in Kerguelen Islands?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> <entpos@@2> . }
-valid sparql
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 4731
 List the mammals whose taxonomy is Diprotodontia and phylum is Chordate?
 nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 3059
 Count the key people of the Clinton Foundation?
-nomatch
+match
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }
-select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 2141
@@ -4328,7 +4328,7 @@ valid sparql
 Under which common jurisdiction do Trinity School, Brentwood and Buckhurst Hill County High School fall?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 4045
@@ -4384,7 +4384,7 @@ valid sparql
 Who won the silver medal when the bronze was won by Yang Yilin?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
 valid sparql
 ................
 580
@@ -4452,9 +4452,9 @@ valid sparql
 ................
 1081
 How many home stadium are there, of the soccer club seasons whose chairman is Merritt Paulson?
-match
+nomatch
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 1664
@@ -4543,9 +4543,9 @@ valid sparql
 ................
 4738
 The successor of Ulrich II, Count of East Frisia was born in what place?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 635
@@ -4564,9 +4564,9 @@ valid sparql
 ................
 4364
 Who is considered to be the deciding person when it comes to crustaceans from the Balanidae family?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 4142
@@ -4613,16 +4613,16 @@ valid sparql
 ................
 2660
 Which military unit garrison is Arlington County, Virginia and The Pentagon?
-match
+nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
-select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
+select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> <entpos@@2> . ?vr1 <entpos@@3> <predpos@@3> }
 valid sparql
 ................
 2491
 Name all the products produced by the producer of United States dollar ?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 3854
@@ -4643,7 +4643,7 @@ valid sparql
 Count the  total number of mammals whose phylum is Chordate and order (taxonomy) is Diprotodontia?
 nomatch
 select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr0 <entpos@@2> <predpos@@3> }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 3261
@@ -4669,9 +4669,9 @@ valid sparql
 ................
 3736
 Who is associated  with the musical artists from Africa '70 (band) and Tony Allen ?
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> <entpos@@2> . ?vr1 <entpos@@3> <predpos@@3> }
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . ?vr0 <entpos@@3> <predpos@@3> }
 valid sparql
 ................
 4146
@@ -4706,7 +4706,7 @@ valid sparql
 What is the total number of participant in conflict of SFOR?
 nomatch
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 971
@@ -4718,9 +4718,9 @@ valid sparql
 ................
 2701
 Where is Denver Broncos located ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 4495
@@ -4734,8 +4734,8 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Which river flows through Hudson Highlands State park and also through Troy, New york ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> <entpos@@2> . }
-valid sparql
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 2368
 What is the university to which Erica Frank went, and where Ivan Toplak was a club manager?
@@ -4846,8 +4846,8 @@ valid sparql
 Raymond Johansen is the mayor of what city?
 nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }
-select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr1 . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
+valid sparql
 ................
 3009
 What region was Gloria Schaffer born in, which also contains Newington?
@@ -5049,14 +5049,14 @@ valid sparql
 What is the total number of other combatant of the military conflicts whose combatant is Choctaw?
 nomatch
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 1069
 List some pupils of National Science Medal winning scientists?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 2524
@@ -5103,9 +5103,9 @@ valid sparql
 ................
 815
 List presidents of the school whose one of the president is Charles. Prince of Wales ?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 3067
@@ -5138,16 +5138,16 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 3354
 What did Steven T Mason's father die from?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 2485
 Whose military units are VMF-218 and VMF-155?
 nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@1> <entpos@@2> . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 562
@@ -5210,14 +5210,14 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 What other things are provided by the producer of Office 365?
 nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
 valid sparql
 ................
 4903
 Who owns the company that made the Edsel Villager?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 4735
@@ -5243,10 +5243,10 @@ valid sparql
 ................
 1527
 List the other nicknames of city which has one of the nickname as City of Angels ?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 3987
 Count the writers whose work has been played in NY?
@@ -5369,9 +5369,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 3923
 How many people have fought wars where Arthur St. Clair was a commander?
-match
+nomatch
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4199
@@ -5404,10 +5404,10 @@ valid sparql
 ................
 4723
 Through which states do the rivers flow which join in the republican river from the left?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+valid sparql
 ................
 3991
 Give me the home town of all musical artists who uses Guitar as instrument ?
@@ -5474,9 +5474,9 @@ valid sparql
 ................
 4090
 What are some other things developed by the company who made the remote desktop protocol?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 3108
@@ -5509,9 +5509,9 @@ valid sparql
 ................
 3643
 What is the religion of the ones in the Kampuchean Union of Salvation?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 4927
@@ -5551,10 +5551,10 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 1802
 who developed google videos?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
+valid sparql
 ................
 4736
 Who is the child of John Tyler, Sr.?
@@ -5574,7 +5574,7 @@ valid sparql
 Who is the owner of  Latvian Wikipedia and Wiktionary ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 1959
@@ -5630,7 +5630,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 What system is both a platform where Nord runs and also distributed The beauty inside?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 1986
@@ -5691,9 +5691,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 1147
 Count everyone who lives in a place where Indian English is an official language ?
-nomatch
+match
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 3272
@@ -5761,9 +5761,9 @@ valid sparql
 ................
 4496
 How many religions are followed by organizations which are internationally known as the muslim brotherhood?
-match
+nomatch
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4218
@@ -5775,9 +5775,9 @@ valid sparql
 ................
 3255
 Who is the developer of the software which is produced by Claris ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 202
@@ -6022,7 +6022,7 @@ valid sparql
 List the people residing in Wilton, Connecticut?
 nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . }
+select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
 valid sparql
 ................
 1306
@@ -6064,7 +6064,7 @@ valid sparql
 Which common prime minister did Graham Richardson and Bon McMullan serve ?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 4934
@@ -6099,8 +6099,8 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Give me someone on the board of trinity house?
 nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }
-select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> }
+valid sparql
 ................
 1597
 Whose leaders are Willem-Alexander and Fredis Refunjol?
@@ -6153,9 +6153,9 @@ valid sparql
 ................
 4636
 How many cities are close to Lake Victoria?
-nomatch
+match
 select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }
-select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . }
+select distinct count ( ?vr0 ) where { <entpos@@1> <predpos@@1> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 3242
@@ -6174,9 +6174,9 @@ valid sparql
 ................
 1757
 What cities are near to Nihoa which is also known as Bird Island ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
 4191
@@ -6279,9 +6279,9 @@ valid sparql
 ................
 2773
 who was the president under whom winston bryant served as a lieutenant?
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . }
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
 valid sparql
 ................
 2731
@@ -6344,7 +6344,7 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 Which team did Wilfred McDonalds and Cam Plante play for?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 2278
@@ -6363,10 +6363,10 @@ valid sparql
 ................
 4474
 What is the total number of software whose programming language is C++ and operating system is Microsoft Windows?
-nomatch
+match
 select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> }
-select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> <entpos@@2> . }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr0 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> <entpos@@2> }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 4514
 Name the city of Phil-Ellena ?
@@ -6391,9 +6391,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 2695
 Which airlines fly to Gimhae International Airport?
-match
+nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
-select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
+select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
 valid sparql
 ................
 2027
@@ -6503,9 +6503,9 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 3798
 What genre's softwares are released with a GNU GPL license?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 valid sparql
 ................
 4551
@@ -6526,8 +6526,8 @@ valid sparql
 Giorgos Kaminis is the mayor of what?
 nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
-select distinct count ( ?vr1 ) where { <entpos@@1> <predpos@@1> ?vr1 . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
+valid sparql
 ................
 995
 Where is the headquarters of Metro Transit (Minnesota) ?
@@ -6573,9 +6573,9 @@ valid sparql
 ................
 3843
 Where did the scientist study whose doctoral thesis was supervised by Leonard Lerman?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 2613
@@ -6615,16 +6615,16 @@ valid sparql
 ................
 1585
 Which office holder owes its allegiance to a state whose capital town is Jamestown, Virginia?
-nomatch
+match
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . ?vr1 <entpos@@2> <predpos@@3> }
+select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . ?vr0 <entpos@@2> <predpos@@3> }
 valid sparql
 ................
 1955
 Which professional fighter, who is also a politician and was elected to House of Representatives of the Philippines?
 nomatch
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
+select distinct ?vr1 where { ?vr1 <predpos@@1> <entpos@@1> . }
 valid sparql
 ................
 3152
@@ -6678,9 +6678,9 @@ valid sparql
 ................
 2612
 Name  some ww1 veterans?
-nomatch
+match
 select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }
-select distinct ?vr1 where { <entpos@@1> <predpos@@1> ?vr1 }
+select distinct ?vr0 where { ?vr0 <predpos@@1> <entpos@@1> . }
 valid sparql
 ................
 2824
@@ -6888,10 +6888,10 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 3385
 does the US navy have the structure of command of us department of defence?
-nomatch
+match
 ask where { <entpos@@1> <predpos@@1> <entpos@@2> }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+ask where { <entpos@@1> <predpos@@1> <entpos@@2> }
+valid sparql
 ................
 4555
 Name books with publisher as Francisco de Robles and writer as Miguel de Cervantes ?
@@ -6918,7 +6918,7 @@ valid sparql
 What nation is Hornito located in, where Jamie Bateman Cayn died too?
 nomatch
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 . <entpos@@2> <predpos@@2> ?vr0 . }
-select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 . }
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr1 <entpos@@2> <predpos@@2> ?vr0 }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found '<'  (at char 110), (line:1, col:111)
 ................
 769
@@ -6944,10 +6944,10 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 2919
 what cities are close by LoDaisKa ?
-nomatch
+match
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
-select distinct count ( ?vr1 ) where { ?vr1 <predpos@@1> <entpos@@1> . }
-invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
+select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
+valid sparql
 ................
 3171
 Which wars were fought when the commanders involved served under PM Choi Tu Son?
@@ -6974,7 +6974,7 @@ valid sparql
 Count the number teams which have  former ice hockey players which also included American Hockey League ?
 nomatch
 select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 }
-select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr0 <predpos@@2> ?vr1 . }
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@2> ?vr0 . }
 invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 3092
@@ -6986,10 +6986,10 @@ invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuer
 ................
 3772
 List all the schools of the rugby player whose went to school named Pietermaritzburg ?
-match
+nomatch
 select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . }
-select distinct ?vr0 where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 . }
-valid sparql
+select distinct count ( ?vr0 ) where { ?vr1 <predpos@@1> <entpos@@1> . ?vr1 <predpos@@1> ?vr0 }
+invalid sparql  Expected {SelectQuery | ConstructQuery | DescribeQuery | AskQuery}, found 'c'  (at char 16), (line:1, col:17)
 ................
 860
 Name the office of Richard Coke ?
@@ -6998,5 +6998,5 @@ select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 select distinct ?vr0 where { <entpos@@1> <predpos@@1> ?vr0 }
 valid sparql
 ................
-exactmatch:  660   notmatch:  340  total:  999
-validsparql:  714  nonvalidsparql:  286
+exactmatch:  686   notmatch:  314  total:  999
+validsparql:  710  nonvalidsparql:  290
