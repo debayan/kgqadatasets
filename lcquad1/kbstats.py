@@ -13,18 +13,18 @@ def hitkg(query):
         print(err)
         return ''
 
-#goldd = {}
-#goldq = {}
-#d = json.loads(open(sys.argv[1]).read()) #lcq1gold
-#
-#for item in d:
-#    result = hitkg(item['sparql_query'])
-##    print(item)
-##    print(result)
-#    goldd[str(item['_id'])] = result
-#    goldq[str(item['_id'])] = item['sparql_query']
+goldd = {}
+goldq = {}
+d = json.loads(open(sys.argv[1]).read()) #lcq1gold
 
-d = json.loads(open(sys.argv[1]).read()) #eg: model_folder_test31.1out.json
+for item in d:
+    result = hitkg(item['sparql_query'])
+#    print(item)
+#    print(result)
+    goldd[str(item['_id'])] = result
+    goldq[str(item['_id'])] = item['sparql_query']
+
+d = json.loads(open(sys.argv[2]).read()) #eg: model_folder_test31.1out.json
 
 em = 0
 nem = 0
@@ -32,12 +32,14 @@ qem = 0
 qnem = 0
 for idx,item in enumerate(d):
     print(item)
-    print(item['uid'])
+    print(str(item['uid']))
     print(item['question'])
     target = item['target']
     answer = item['answer']
     ents = item['goldents']
     rels = item['goldrels']
+    print("ents: ",ents)
+    print("rels: ",rels)
     print("target: ",target)
     print("answer: ",answer)
     if target == answer:
@@ -48,17 +50,17 @@ for idx,item in enumerate(d):
         print("querynotmatch")
     for idx1,ent in enumerate(ents):
         if ent:
-            target = target.replace('entpos@@'+str(idx+1),ent)
+            target = target.replace('entpos@@'+str(idx1+1),ent)
     for idx1,rel in enumerate(rels):
         if rel:
-            target = target.replace('predpos@@'+str(idx+1),rel)
+            target = target.replace('predpos@@'+str(idx1+1),rel)
     resulttarget = hitkg(target)
     for idx1,ent in enumerate(ents):
         if ent:
-            answer = answer.replace('entpos@@'+str(idx+1),ent)
+            answer = answer.replace('entpos@@'+str(idx1+1),ent)
     for idx1,rel in enumerate(rels):
         if rel:
-            answer = answer.replace('predpos@@'+str(idx+1),rel)
+            answer = answer.replace('predpos@@'+str(idx1+1),rel)
     resultanswer = hitkg(answer)
     if resulttarget == resultanswer:
         print("match")
@@ -66,8 +68,9 @@ for idx,item in enumerate(d):
     else:
         print("nomatch")
         nem += 1
-    print("target: ",target)
-    print("answer: ",answer)
+    print("target_filled: ",target)
+    print("answer_filled: ",answer)
+    print("original_quer: ",goldq[str(item['uid'])])
     print("gold: ",resulttarget)
     print("result: ",resultanswer)
     print('................')
