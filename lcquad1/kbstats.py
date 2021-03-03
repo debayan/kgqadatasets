@@ -31,6 +31,7 @@ nem = 0
 qem = 0
 qnem = 0
 for idx,item in enumerate(d):
+    print(item)
     print(item['uid'])
     print(item['question'])
     target = item['target']
