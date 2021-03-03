@@ -46,17 +46,17 @@ for idx,item in enumerate(d):
     else:
         qnem += 1
         print("querynotmatch")
-    for idx,ent in enumerate(ents):
+    for idx1,ent in enumerate(ents):
         if ent:
             target = target.replace('entpos@@'+str(idx+1),ent)
-    for idx,rel in enumerate(rels):
+    for idx1,rel in enumerate(rels):
         if rel:
             target = target.replace('predpos@@'+str(idx+1),rel)
     resulttarget = hitkg(target)
-    for idx,ent in enumerate(ents):
+    for idx1,ent in enumerate(ents):
         if ent:
             answer = answer.replace('entpos@@'+str(idx+1),ent)
-    for idx,rel in enumerate(rels):
+    for idx1,rel in enumerate(rels):
         if rel:
             answer = answer.replace('predpos@@'+str(idx+1),rel)
     resultanswer = hitkg(answer)
