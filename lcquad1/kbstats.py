@@ -68,6 +68,8 @@ for item in d:
 
 d = json.loads(open(sys.argv[2]).read()) #eg: model_folder_test31.1out.json
 
+querywrong = []
+
 em = 0
 nem = 0
 qem = 0
@@ -91,6 +93,8 @@ for idx,item in enumerate(d):
     else:
         qnem += 1
         print("querynotmatch")
+    targ_ = target
+    ans_ = answer
     for idx1,ent in enumerate(ents):
         if ent:
             target = target.replace('entpos@@'+str(idx1+1),ent)
@@ -114,6 +118,7 @@ for idx,item in enumerate(d):
     else:
         print("nomatch")
         nem += 1
+        querywrong.append({'querytempans':ans_, 'querytemptar': targ_, 'queryans':answer,'querytar':target,'id':str(item['uid']),'question':item['question'],'ents':ents,'rels':rels,'resulttarget':resulttarget,'resultanswer':resultanswer})
     print("target_filled: ",target)
     print("answer_filled: ",answer)
     print("original_quer: ",goldq[str(item['uid'])])
@@ -123,3 +128,7 @@ for idx,item in enumerate(d):
     print("exactmatch: ",em, "  notmatch: ",nem," total: ",idx)
     print("querymatch: ",qem," querynotmatch: ",qnem)
     print("avg f1: ",avgf1)
+
+f = open(sys.argv[3],'w')
+f.write(json.dumps(querywrong,indent=4,sort_keys=True))
+f.close()
