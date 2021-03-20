@@ -45,7 +45,7 @@ def calcf1(target,answer):
 def hitkg(query):
     try:
         url = 'http://localhost:8892/sparql/'
-        print(query)
+        #print(query)
         r = requests.get(url, params={'format': 'json', 'query': query})
         json_format = r.json()
         #print(entid,json_format)
@@ -129,6 +129,6 @@ for idx,item in enumerate(d):
     print("querymatch: ",qem," querynotmatch: ",qnem)
     print("avg f1: ",avgf1)
 
-f = open(sys.argv[3],'w')
-f.write(json.dumps(querywrong,indent=4,sort_keys=True))
-f.close()
+#f = open(sys.argv[3],'w')
+#f.write(json.dumps(querywrong,indent=4,sort_keys=True))
+#f.close()
