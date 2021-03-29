@@ -16,7 +16,9 @@ for child in root:
                 if subchild.attrib['lang'] == 'en':
                     d['question'] = subchild.text
         if subchild.tag == 'query':
-            d['query'] = subchild.text.replace('\n','')
+            d['query'] = subchild.text
+        if subchild.tag == 'pseudoquery':
+            d['pseudoquery'] = subchild.text
         print('    ',subchild.tag, subchild.attrib, subchild.text)
     print(d)
     questions.append(d)
